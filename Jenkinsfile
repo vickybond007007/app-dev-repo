@@ -2,9 +2,6 @@ pipeline {
 
     agent any
 
-    tools {
-        maven 'Maven3'
-    }
 
     environment {
         QA_REPO_URL = 'https://github.com/vickybond007007/selenium-ci-cd-demo.git'
