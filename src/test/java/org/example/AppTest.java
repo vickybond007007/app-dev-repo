@@ -1,19 +1,23 @@
 package org.example;
 
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.Test;
 
-/**
- * Unit test for simple App.
- */
 public class AppTest {
 
-    /**
-     * Rigorous Test :-)
-     */
     @Test
-    public void shouldAnswerWithTrue() {
-        assertTrue(true);
+    public void calculatesSum() {
+        assertEquals(4, App.calculateSum(1, 3));
+    }
+
+    @Test
+    public void calculatesDiff() {
+        assertEquals(2, App.calculateDiff(5, 3));
+    }
+
+    @Test
+    public void calculatesMultiple() {
+        assertEquals(15, App.calculateMultiple(5, 3));
     }
 }

@@ -1,0 +1,107 @@
+{
+  "defaults": {
+    "regression_tags": [
+      "smoke",
+      "calculator-regression"
+    ],
+    "test_command": "mvn clean test -Dtest=CalculatorApiTest"
+  },
+  "rules": [
+    {
+      "name": "Calculator core logic",
+      "patterns": [
+        "src/main/java/org/example/App.java"
+      ],
+      "areas": [
+        "Calculator logic"
+      ],
+      "test_case_ids": [
+        "SUM_POS_001",
+        "SUM_POS_002",
+        "SUM_POS_003",
+        "DIFF_POS_001",
+        "DIFF_POS_002",
+        "DIFF_POS_003",
+        "MULT_POS_001",
+        "MULT_POS_002",
+        "MULT_POS_003"
+      ],
+      "regression_tags": [
+        "calculator",
+        "unit"
+      ],
+      "new_test_case_ideas": [
+        "Verify calculator operations with positive numbers.",
+        "Verify calculator operations with zero.",
+        "Verify calculator operations with negative numbers."
+      ]
+    },
+    {
+      "name": "Calculator REST API",
+      "patterns": [
+        "src/main/java/org/example/CalculatorController.java",
+        "src/main/java/org/example/CalculationResponse.java"
+      ],
+      "areas": [
+        "Calculator REST API",
+        "API response contract"
+      ],
+      "test_case_ids": [
+        "SUM_POS_001",
+        "SUM_POS_002",
+        "SUM_POS_003",
+        "SUM_NEG_001",
+        "SUM_NEG_002",
+        "SUM_NEG_003",
+        "DIFF_POS_001",
+        "DIFF_POS_002",
+        "DIFF_POS_003",
+        "DIFF_NEG_001",
+        "DIFF_NEG_002",
+        "DIFF_NEG_003",
+        "MULT_POS_001",
+        "MULT_POS_002",
+        "MULT_POS_003",
+        "MULT_NEG_001",
+        "MULT_NEG_002",
+        "MULT_NEG_003"
+      ],
+      "regression_tags": [
+        "api",
+        "calculator",
+        "contract"
+      ],
+      "new_test_case_ideas": [
+        "Verify sum endpoint returns correct JSON response.",
+        "Verify diff endpoint returns correct JSON response.",
+        "Verify multiple endpoint returns correct JSON response.",
+        "Verify missing query parameter returns HTTP 400.",
+        "Verify non-numeric query parameter returns HTTP 400."
+      ]
+    },
+    {
+      "name": "Build or dependency changes",
+      "patterns": [
+        "pom.xml",
+        "Jenkinsfile"
+      ],
+      "areas": [
+        "Build pipeline",
+        "Dependency management"
+      ],
+      "test_case_ids": [
+        "SUM_POS_001",
+        "DIFF_POS_001",
+        "MULT_POS_001"
+      ],
+      "regression_tags": [
+        "smoke",
+        "pipeline"
+      ],
+      "new_test_case_ideas": [
+        "Verify application starts successfully in CI.",
+        "Verify calculator smoke APIs are reachable after deployment."
+      ]
+    }
+  ]
+}
